@@ -2,12 +2,12 @@ name: UPLOAD COMBINED (WITH COUNTER)
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   # - cron: '30 7 * * *'    # 1:00 PM IST (7:30 AM UTC)
-  #   # - cron: '30 9 * * *'    # 3:00 PM IST (9:30 AM UTC)
-  #   - cron: '30 11 * * *'   # 5:00 PM IST (11:30 AM UTC)
-  #   # - cron: '30 13 * * *'   # 7:00 PM IST (1:30 PM UTC)
-  #   - cron: '30 15 * * *'   # 9:00 PM IST (3:30 PM UTC)
+  schedule:
+    # - cron: '30 7 * * *'    # 1:00 PM IST (7:30 AM UTC)
+    # - cron: '30 9 * * *'    # 3:00 PM IST (9:30 AM UTC)
+    - cron: '30 11 * * *'   # 5:00 PM IST (11:30 AM UTC)
+    # - cron: '30 13 * * *'   # 7:00 PM IST (1:30 PM UTC)
+    - cron: '0 15 * * *'    # 8:30 PM IST (3:30 PM UTC)
 
 jobs:
   update-counter:
@@ -65,7 +65,6 @@ jobs:
           sparse-checkout: |
             INSTAGRAM/
             AI_MODELS/
-            VIDEO_EDITING_QUALITY/
             counter_upload.txt
             video_end_tracker.txt
             requirements.txt
@@ -179,7 +178,6 @@ jobs:
           sparse-checkout: |
             FACEBOOK/
             AI_MODELS/
-            VIDEO_EDITING_QUALITY/
             counter_upload.txt
             video_end_tracker.txt
             requirements.txt
